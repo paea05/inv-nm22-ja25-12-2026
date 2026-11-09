@@ -9,9 +9,9 @@ export const CONFIG = {
   dirMisa: 'Parroquia Santa María Guadalupe, C. Iturbide 52, El Reposo, La Piragua, 68310 San Juan Bautista Tuxtepec, Oax.',
   dirFiesta: 'Avenida 5 de Mayo 41, San Francisco Salsipuedes, 68442',
   padres: [
-    { rol: 'Padres de Jesús Adrián y Nina María', nombres: ['Maria Guadalupe Ronquillo & Adrian Pantoja'] },
+    { rol: 'Padres de Jesús Adrián y Nina María', nombres: ['Maria Guadalupe Ronquillo Chepe & Adrian Pantoja Esteban'] },
     { rol: 'Padrino de bautizo (Jesús Adrián)', nombres: ['Omar David Juan Alcantar'] },
-    { rol: 'Padrinos de acción de gracias (Nina María)', nombres: ['Ricardo Alberto Sánchez Abascal', 'Martha Eli López Nieto'] },
+    { rol: 'Padrinos de acción de gracias (Nina María)', nombres: ['Martha Eli López Nieto', 'Ricardo Alberto Sánchez Abascal'] },
   ],
   regalosUrl: '',               // Enlace de la mesa de regalos; vacío = sección oculta
   whatsapp: [                   // Teléfonos de 10 dígitos (se antepone la lada 52)

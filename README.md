@@ -19,6 +19,49 @@ assets/audio/           Música de fondo (MP3)
 assets/vendor/          Bootstrap 5 grid (copia local con su licencia)
 ```
 
+## Arbol de Estructura
+```
+inv-nm22-ja25-12-2026/
+│
+├── index.html
+│
+├── assets/
+│   ├── audio/
+│   │   └── musica.mp3
+│   │
+│   ├── css/
+│   │   └── styles.css
+│   │
+│   ├── img/
+│   │   ├── apple-touch-icon.png
+│   │   ├── banner.png
+│   │   ├── gallery-1.jpg
+│   │   ├── gallery-2.jpg
+│   │   ├── gallery-3.jpg
+│   │   ├── icon.svg
+│   │   ├── og.jpg
+│   │   ├── opening-bautizo.jpg
+│   │   └── opening-cumple.jpg
+│   │
+│   ├── js/
+│   │   ├── config.js
+│   │   ├── countdown.js
+│   │   ├── events.js
+│   │   ├── gallery.js
+│   │   ├── guest.js
+│   │   ├── intro.js
+│   │   ├── main.js
+│   │   ├── music.js
+│   │   └── utils.js
+│   │
+│   └── vendor/
+│       ├── bootstrap-grid.min.css
+│       └── LICENSE
+│
+├── README.md
+└── .gitignore
+```
+
 ## Uso
 - **Editar datos** (horas, direcciones, padrinos, teléfonos, regalos): `assets/js/config.js`.
 - **Invitado personalizado:** agregar al enlace `#Nombre-Apellido.accesos`, por ejemplo `.../#Familia-Perez.4`.
