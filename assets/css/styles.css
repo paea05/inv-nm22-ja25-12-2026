@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Invitación: Bautizo de Jesús Adrián y 4.º cumpleaños de Nina María
+   Convención: BEM (bloque__elemento--modificador) y clases de estado is-*.
+   Bootstrap 5 solo aporta la cuadrícula (assets/vendor/bootstrap).
+   ========================================================================== */
+
+/* 1. Variables de color (modo claro) y modo oscuro automático */
+:root {
+  --bg: #fbf6e9; --card: #fffdf6; --ink: #1f3a6e; --soft: #4b5d82;
+  --gold: #b98a2e; --sky: #dcecf8; --line: #e6d9b4;
+  --btn: #1f3a6e; --btn-ink: #fff;
+  --font-script: "Great Vibes", "Brush Script MT", cursive;
+  --font-text: Quicksand, "Segoe UI", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1b36; --card: #17284d; --ink: #f6efd9; --soft: #b9c6e2;
+    --gold: #e0b559; --sky: #1d3260; --line: #3a4d7a;
+    --btn: #e0b559; --btn-ink: #10204a;
+    color-scheme: dark;
+  }
+}
+
+/* 2. Base: reinicio mínimo y tipografía */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); text-align: center;
+  font-family: var(--font-text); line-height: 1.55;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+body.is-locked { overflow: hidden; height: 100%; }
+p { margin: .4rem 0; }
+[hidden] { display: none !important; }
+.script { font-family: var(--font-script); font-weight: 400; line-height: 1.1; margin: 0; }
+
+/* 3. Estructura general de la página */
+.page { max-width: 520px; margin: 0 auto; overflow: hidden; }
+.section { padding: 2.6rem 1.5rem; }
+.section--band { background: var(--sky); }
+.section--flush-top { padding-top: 0; }
+.section__title { font-size: 2.6rem; color: var(--gold); margin-bottom: .4rem; }
+
+/* 4. Portada (hero) y título */
+.hero { position: relative; }
+.hero::after { content: ""; position: absolute; inset: auto 0 0; height: 22%; background: linear-gradient(transparent, var(--bg)); }
+.hero__img { display: block; width: 100%; height: auto; }
+.hero__banner { position: absolute; top: 9.5%; left: 0; right: 0; z-index: 1; font-size: min(9vw, 46px); line-height: 1; color: #1f3a6e; }
+.title { position: relative; z-index: 2; margin-top: -2.2rem; padding-top: 0; }
+.title__lead { font-size: 1.8rem; color: var(--gold); }
+.title__heading { font-size: clamp(2.4rem, 11vw, 3.4rem); color: var(--ink); }
+.title__amp { color: var(--gold); }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.chip { background: var(--sky); border-radius: 999px; padding: .45rem 1rem; font-weight: 600; font-size: .95rem; }
+
+/* 5. Invitado personalizado y cuenta regresiva */
+.guest { margin: 0 1.5rem; padding: 1.4rem 1rem; background: var(--card); border: 2px solid var(--gold); border-radius: 22px; }
+.guest__label { font-size: 2rem; color: var(--gold); }
+.guest__name { margin: .4rem 0; font-size: 1.5rem; font-weight: 700; }
+.guest__access { color: var(--soft); }
+.countdown { max-width: 380px; margin: 1rem auto 0; }
+.countdown__item { padding: .8rem .2rem; background: var(--card); border: 1.5px solid var(--line); border-radius: 16px; }
+.countdown__value { display: block; font-size: 1.9rem; font-weight: 700; }
+.countdown__label { font-size: .8rem; color: var(--soft); }
+.countdown__msg { margin-top: 1rem; font-weight: 600; }
+
+/* 6. Tarjetas de eventos (misa y recepción) y botones */
+.event { max-width: 400px; margin: 1.2rem auto 0; padding: 1.8rem 1.3rem; background: var(--card); border: 1.5px solid var(--line); border-radius: 26px; }
+.event__icon { width: 56px; height: 56px; color: var(--gold); }
+.event__title { margin: .2rem 0; font-size: 2.2rem; color: var(--ink); }
+.event__title--long { font-size: 1.75rem; line-height: 1.2; }
+.event__time { font-size: 1.2rem; font-weight: 700; }
+.event__place { margin-top: .8rem; font-weight: 600; }
+.event__address { color: var(--soft); font-size: .95rem; }
+.button { display: inline-block; margin-top: 1rem; padding: .8rem 1.6rem; border: 0; border-radius: 999px; background: var(--btn); color: var(--btn-ink); font: 700 1rem var(--font-text); text-decoration: none; cursor: pointer; }
+.button:focus-visible, .gallery__arrow:focus-visible, .viewer__btn:focus-visible, .music-btn:focus-visible, .intro__seal:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+/* 7. Programa, padres/padrinos y confirmación */
+.program { max-width: 340px; margin: 1rem auto 0; padding: 0; list-style: none; text-align: left; border-left: 3px solid var(--gold); }
+.program__item { position: relative; padding: .5rem 0 .5rem 1.1rem; font-weight: 600; }
+.program__item::before { content: ""; position: absolute; left: -9px; top: 1.05rem; width: 15px; height: 15px; border-radius: 50%; background: var(--bg); border: 3px solid var(--gold); }
+.people__role { margin-top: 1rem; font-weight: 700; }
+.people__name { font-size: 1.05rem; }
+.rsvp__actions { display: flex; flex-direction: column; align-items: center; gap: .7rem; margin-top: 1rem; }
+.rsvp__actions .button { margin-top: 0; }
+.footer { padding: 2rem 1.5rem 3rem; }
+.footer__thanks { font-size: 2.4rem; color: var(--gold); }
+
+/* 8. Galería: carrusel con desplazamiento y puntos */
+.gallery { position: relative; margin: 1rem -1.5rem 0; }
+.gallery__track { position: relative; display: flex; gap: .9rem; padding: .6rem 11%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.gallery__track::-webkit-scrollbar { display: none; }
+.gallery__photo { flex: 0 0 78%; width: 78%; height: auto; scroll-snap-align: center; border: 3px solid var(--gold); border-radius: 20px; box-shadow: 0 10px 24px rgba(0, 0, 0, .18); cursor: zoom-in; }
+.gallery__arrow { position: absolute; top: 50%; z-index: 2; width: 40px; height: 40px; transform: translateY(-50%); border: 0; border-radius: 50%; background: rgba(255, 255, 255, .9); color: #1f3a6e; font-size: 1.6rem; line-height: 1; box-shadow: 0 3px 10px rgba(0, 0, 0, .25); cursor: pointer; }
+.gallery__arrow--prev { left: .5rem; }
+.gallery__arrow--next { right: .5rem; }
+.gallery__dots { display: flex; justify-content: center; gap: .5rem; margin-top: .5rem; }
+.gallery__dot { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%; background: var(--line); cursor: pointer; transition: all .25s; }
+.gallery__dot.is-active { background: var(--gold); transform: scale(1.3); }
+.gallery__hint { font-size: .85rem; color: var(--soft); }
+
+/* 9. Visor de fotos con marco de tableta */
+.viewer { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 1rem; background: rgba(10, 20, 45, .82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.viewer__device { position: relative; width: min(90vw, calc(72vh * .8 + 32px)); padding: 16px 14px 28px; border-radius: 34px; background: linear-gradient(145deg, #343945, #0e1015); box-shadow: 0 30px 60px rgba(0, 0, 0, .55), inset 0 0 0 2px #4b5160; }
+.viewer__camera { position: absolute; top: 6px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #3d4352; }
+.viewer__home { position: absolute; bottom: 10px; left: 50%; width: 34%; height: 4px; transform: translateX(-50%); border-radius: 4px; background: #6b7280; }
+.viewer__screen { position: relative; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; background: #000; }
+.viewer__photo { display: block; width: 100%; height: 100%; object-fit: cover; }
+.viewer__btn { position: absolute; width: 38px; height: 38px; border: 0; border-radius: 50%; background: rgba(15, 20, 40, .55); color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.viewer__btn--close { top: 10px; right: 10px; }
+.viewer__btn--prev, .viewer__btn--next { top: 50%; margin-top: -19px; }
+.viewer__btn--prev { left: 10px; }
+.viewer__btn--next { right: 10px; }
+.viewer__counter { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); padding: .2rem .7rem; border-radius: 999px; background: rgba(15, 20, 40, .55); color: #fff; font-size: .8rem; font-weight: 600; }
+
+/* 10. Botón de música flotante */
+.music-btn { position: fixed; right: 1rem; bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem); z-index: 60; display: grid; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .92); color: #1f3a6e; font-size: 1.5rem; line-height: 1; box-shadow: 0 4px 14px rgba(0, 0, 0, .28); cursor: pointer; }
+.music-btn.is-paused { opacity: .75; }
+.music-btn.is-paused::after { content: ""; position: absolute; width: 30px; height: 3px; border-radius: 2px; background: #1f3a6e; transform: rotate(-45deg); }
+
+/* 11. Pantalla de inicio: carga, mitades (bautizo / cumpleaños) y sello */
+.intro { position: fixed; inset: 0; z-index: 100; overflow: hidden; background: var(--bg); }
+.intro__loader { position: absolute; inset: 0; z-index: 4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.4rem; background: var(--bg); transition: opacity .7s; }
+.intro.is-ready .intro__loader { opacity: 0; pointer-events: none; }
+.intro__names { font-size: 2rem; color: var(--gold); }
+.intro__icons { display: flex; gap: .7rem; margin: 0; padding: 0; list-style: none; }
+.intro__icon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--sky); font-size: 1.6rem; opacity: .35; transition: all .35s; }
+.intro__icon.is-active { opacity: 1; transform: translateY(-6px); background: #f3dd8f; }
+.intro__bar { width: min(70vw, 300px); height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.intro__bar-fill { display: block; width: 0; height: 100%; background: var(--gold); }
+.intro__panel { position: absolute; top: 0; bottom: 0; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .7rem; padding: env(safe-area-inset-top, 0px) .3rem env(safe-area-inset-bottom, 0px); background: var(--card); transition: transform 1.2s cubic-bezier(.7, 0, .2, 1); }
+.intro__panel--left { left: 0; }
+.intro__panel--right { right: 0; background: var(--sky); }
+.intro__label { font-size: clamp(1.7rem, 8vw, 2.4rem); color: var(--gold); line-height: 1; }
+.intro__caption { margin: 0; font-size: .8rem; font-weight: 600; }
+.intro__frame { width: 88%; aspect-ratio: 9 / 16; max-height: 60vh; border: 3px solid var(--gold); border-radius: 24px; overflow: hidden; }
+.intro__art { display: block; width: 100%; height: 100%; object-fit: cover; }
+.intro__seal { position: absolute; left: 50%; top: 50%; z-index: 3; padding: 0; transform: translate(-50%, -50%); border: 0; background: none; text-align: center; cursor: pointer; transition: opacity .5s, transform .6s; -webkit-tap-highlight-color: transparent; }
+.intro__seal svg { display: block; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .3)); }
+.intro__tip { display: block; margin-bottom: .5rem; padding: .4rem .9rem; border-radius: 999px; background: #fff; color: #1f3a6e; font: 600 .9rem var(--font-text); white-space: nowrap; box-shadow: 0 4px 12px rgba(0, 0, 0, .18); }
+.intro__guest { position: absolute; z-index: 3; left: 0; right: 0; bottom: calc(env(safe-area-inset-bottom, 0px) + 1.2rem); margin: 0; font-weight: 700; text-shadow: 0 1px 6px var(--bg); }
+.intro.is-open .intro__panel--left { transform: translateX(-101%); }
+.intro.is-open .intro__panel--right { transform: translateX(101%); }
+.intro.is-open .intro__seal { opacity: 0; transform: translate(-50%, -50%) scale(1.6); pointer-events: none; }
+.intro.is-open .intro__guest { opacity: 0; }
+
+/* 12. Animaciones (solo si la persona no pidió reducir el movimiento) */
+@keyframes pulse { 50% { transform: scale(1.07); } }
+@keyframes hero-in { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
+@keyframes viewer-in { from { opacity: 0; transform: scale(.92) translateY(14px); } }
+@keyframes fade-in { from { opacity: 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .intro__seal svg, .music-btn:not(.is-paused) { animation: pulse 1.8s ease-in-out infinite; }
+  .hero__img { animation: hero-in 1.2s ease both; }
+  .viewer__device { animation: viewer-in .35s ease both; }
+  .viewer__photo.is-entering { animation: fade-in .35s ease both; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro__panel { transition: opacity .4s; }
+  .intro.is-open .intro__panel--left, .intro.is-open .intro__panel--right { transform: none; opacity: 0; }
+}
