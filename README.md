@@ -34,10 +34,13 @@ inv-nm22-ja25-12-2026/
 │   │
 │   ├── img/
 │   │   ├── apple-touch-icon.png
-│   │   ├── banner.png
+│   │   ├── banner.jpg
 │   │   ├── gallery-1.jpg
 │   │   ├── gallery-2.jpg
 │   │   ├── gallery-3.jpg
+│   │   ├── gallery-4.jpg
+│   │   ├── gallery-5.jpg
+│   │   ├── gallery-6.jpg
 │   │   ├── icon.svg
 │   │   ├── og.jpg
 │   │   ├── opening-bautizo.jpg
@@ -55,8 +58,9 @@ inv-nm22-ja25-12-2026/
 │   │   └── utils.js
 │   │
 │   └── vendor/
-│       ├── bootstrap-grid.min.css
-│       └── LICENSE
+│       └── bootstrap/
+│           ├── LICENSE
+│           └── bootstrap-grid.min.css
 │
 ├── README.md
 └── .gitignore
