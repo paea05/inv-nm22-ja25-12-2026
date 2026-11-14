@@ -43,10 +43,10 @@ p { margin: .4rem 0; }
 .section__title { font-size: 2.6rem; color: var(--gold); margin-bottom: .4rem; }
 
 /* 4. Portada (hero) y título */
-.hero { position: relative; }
-.hero::after { content: ""; position: absolute; inset: auto 0 0; height: 22%; background: linear-gradient(transparent, var(--bg)); }
+.hero { position: relative; container-type: inline-size; }
+.hero::after { content: ""; position: absolute; inset: auto 0 0; height: 12%; background: linear-gradient(transparent, var(--bg)); }
 .hero__img { display: block; width: 100%; height: auto; }
-.hero__banner { position: absolute; top: 9.5%; left: 0; right: 0; z-index: 1; font-size: min(9vw, 46px); line-height: 1; color: #1f3a6e; }
+.hero__banner { position: absolute; top: 13.7%; left: 0; right: 0; z-index: 1; transform: translateY(-50%); font-size: 6.5cqw; line-height: 1; color: #1f3a6e; }
 .title { position: relative; z-index: 2; margin-top: -2.2rem; padding-top: 0; }
 .title__lead { font-size: 1.8rem; color: var(--gold); }
 .title__heading { font-size: clamp(2.4rem, 11vw, 3.4rem); color: var(--ink); }
