@@ -4,7 +4,7 @@
  */
 export const CONFIG = {
   fecha: '2026-12-26',          // Fecha del evento (AAAA-MM-DD)
-  horaMisa: '',                 // Formato "HH:MM"; vacío = "Hora por confirmar"
+  horaMisa: '08:00',                 // Formato "HH:MM"; vacío = "Hora por confirmar"
   horaFiesta: '15:00',          // Recepción: 3:00 p.m. (hora del centro de México)
   dirMisa: 'Parroquia Santa María Guadalupe, C. Iturbide 52, El Reposo, La Piragua, 68310 San Juan Bautista Tuxtepec, Oax.',
   dirFiesta: 'Avenida 5 de Mayo 41, San Francisco Salsipuedes, 68442',
