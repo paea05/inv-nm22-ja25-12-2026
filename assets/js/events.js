@@ -16,7 +16,7 @@ export function renderEventTimes(cfg) {
  */
 export function renderMapLinks(cfg) {
   byId('misa-map').href = buildMapsUrl(cfg.dirMisa);
-  byId('fiesta-map').href = buildMapsUrl(cfg.dirFiesta);
+  byId('fiesta-map').href = cfg.mapaFiesta || buildMapsUrl(cfg.dirFiesta);
 }
 
 /**
